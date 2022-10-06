@@ -13,7 +13,7 @@ public class NombresUtils {
         System.out.println("====================");
         profesores.forEach(System.out::println); // Operador de Referencia
     }
-    static <T> List<T> getList(T... elements){
+    public static <T> List<T> getList(T... elements){
         return Arrays.asList(elements);
     }
 }
