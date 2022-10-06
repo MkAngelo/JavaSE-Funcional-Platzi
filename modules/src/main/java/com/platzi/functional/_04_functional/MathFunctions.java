@@ -1,6 +1,8 @@
 package com.platzi.functional._04_functional;
 
+import java.util.BitSet;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class MathFunctions {
     public static void main(String[] args) {
@@ -13,6 +15,29 @@ public class MathFunctions {
 
         System.out.println(squareFunction.apply(5));
         System.out.println(squareMethod(25));
+
+        Function<Integer, Boolean> isOdd = x -> x % 2 == 1;
+
+        Predicate<Integer> isEven = x -> x % 2 == 0;
+
+        isEven.test(4); // true
+
+        Predicate<Student> isApproved = student -> student.getCalificacion() > 6.0;
+
+        Student sinuhe = new Student(5.9);
+        System.out.println(isApproved.test(sinuhe));
+    }
+
+    static class Student {
+        private  double calificacion;
+
+        public Student(double calificacion){
+            this.calificacion = calificacion;
+        }
+
+        public double getCalificacion(){
+            return calificacion;
+        }
     }
 
     static int squareMethod(int x){
